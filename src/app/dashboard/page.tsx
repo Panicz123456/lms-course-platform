@@ -1,7 +1,17 @@
-import { DashboardView } from "@/modules/dashboard/ui/view/dashboard-view"
+import { auth } from "@/lib/auth";
+import { DashboardView } from "@/modules/dashboard/ui/view/dashboard-view";
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
 
-const Page = () => { 
-  return <DashboardView />
-}
+const Page = async () => {
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
 
-export default Page
+  if (!session) {
+    return redirect("/");
+  }
+  return <DashboardView />;
+};
+
+export default Page;

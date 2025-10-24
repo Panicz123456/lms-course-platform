@@ -53,10 +53,10 @@ export const LandingPageView = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
             <Button asChild size="lg">
-              <Link href="/courses">Explore Courses</Link>
+              <Link href="/dashboard/courses">Explore Courses</Link>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <Link href="/login">Sign in</Link>
+              <Link href="/sign-in">Sign in</Link>
             </Button>
           </div>
         </div>
