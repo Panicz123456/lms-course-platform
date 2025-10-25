@@ -15,15 +15,10 @@ import {
 } from "lucide-react";
 import { type Editor } from "@tiptap/react";
 
-import { Toggle } from "../ui/toggle";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "../ui/tooltip";
 import { cn } from "@/lib/utils";
-import { Button } from "../ui/button";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { Toggle } from "@/components/ui/toggle";
+import { Button } from "@/components/ui/button";
 
 interface Props {
   editor: Editor | null;
