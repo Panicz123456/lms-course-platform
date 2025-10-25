@@ -31,7 +31,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { RichTextEditor } from "@/components/rich-text-editor/Editor";
+import { RichTextEditor } from "./rich-text-editor/Editor";
+import { Uploader } from "./file-uploader/uploader";
 
 export const CourseForm = () => {
   const form = useForm<courseSchemaType>({
@@ -135,8 +136,7 @@ export const CourseForm = () => {
             <FormItem className="w-full">
               <FormLabel>Thumbnail image</FormLabel>
               <FormControl>
-                {/* TODO: Update */}
-                <Input placeholder="thumbnail url" {...field} />
+                <Uploader  />
               </FormControl>
               <FormMessage />
             </FormItem>

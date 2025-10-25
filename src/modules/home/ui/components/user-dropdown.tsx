@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import {
   BookOpen,
   ChevronDownIcon,
@@ -28,7 +27,6 @@ interface Props {
 }
 
 export const UserDropdown = ({ name, email, image }: Props) => {
-  const router = useRouter();
   const { handleSignout } = useSignOut();
 
   return (
@@ -64,7 +62,7 @@ export const UserDropdown = ({ name, email, image }: Props) => {
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link href="/courses">
+            <Link href="/dashboard/courses">
               <BookOpen size={16} className="opacity-60" aria-hidden="true" />
               <span>Courses</span>
             </Link>

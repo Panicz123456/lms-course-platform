@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { HomeIcon } from "lucide-react";
-import { useRouter } from "next/navigation";
 import {
   IconDashboard,
   IconDotsVertical,
@@ -30,7 +29,6 @@ import {
 } from "@/components/ui/sidebar";
 
 export function NavUser() {
-  const router = useRouter();
   const {handleSignout} = useSignOut()
   const { isMobile } = useSidebar();
   const { data: session, isPending } = authClient.useSession();
