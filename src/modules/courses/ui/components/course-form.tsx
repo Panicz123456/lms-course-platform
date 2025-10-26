@@ -16,13 +16,6 @@ import {
 } from "@/components/ui/form";
 import slugify from "slugify";
 
-import {
-  courseCategory,
-  courseLevels,
-  courseSchema,
-  courseSchemaType,
-  courseStatus,
-} from "../../schema";
 import { Textarea } from "@/components/ui/textarea";
 import {
   Select,
@@ -31,8 +24,16 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+
 import { RichTextEditor } from "./rich-text-editor/Editor";
 import { Uploader } from "./file-uploader/uploader";
+import {
+  courseCategory,
+  courseLevels,
+  courseSchema,
+  courseSchemaType,
+  courseStatus,
+} from "../../schema";
 
 export const CourseForm = () => {
   const form = useForm<courseSchemaType>({
@@ -136,7 +137,7 @@ export const CourseForm = () => {
             <FormItem className="w-full">
               <FormLabel>Thumbnail image</FormLabel>
               <FormControl>
-                <Uploader  />
+                <Uploader onChange={field.onChange} value={field.value} />
               </FormControl>
               <FormMessage />
             </FormItem>

@@ -7,6 +7,19 @@ import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import { env } from "@/lib/env";
 import { S3 } from "@/lib/s3client";
 
+// const ALLOWED_IMAGE_TYPES = [
+//   "image/jpeg",
+//   "image/png",
+//   "image/webp",
+//   "image/gif",
+// ] as const;
+// const MAX_SIZE = 5 * 1024 * 1024; // 5MB
+// export const fileUploadSchema = z.object({
+//   fileName: z.string().min(1, { error: "Filename is required" }),
+//   contentType: z.enum(ALLOWED_IMAGE_TYPES),
+//   size: z.number().int().positive().max(MAX_SIZE, { error: "File too large" }),
+// });
+
 export const fileUploadSchema = z.object({
   fileName: z.string().min(1, { error: "Filename is required" }),
   contentType: z.string().min(1, { error: "Content type is required" }),
